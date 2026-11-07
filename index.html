@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pesan vila di Puncak, Bogor, dengan total biaya yang langsung terlihat.">
+  <title>Villa Permai – Pemesanan Vila di Puncak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1 class="site-header__title">Villa Permai</h1>
+      <p class="site-header__tagline">Tiga vila keluarga di Puncak, Bogor. Lihat harga dan total biaya sebelum memesan.</p>
+      <nav class="nav" aria-label="Menu utama">
+        <a class="nav__link" href="#vila">Pilihan Vila</a>
+        <a class="nav__link" href="#pesan">Pesan</a>
+        <a class="nav__link" href="#pesanan">Pesanan Saya</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="vila" aria-labelledby="judul-vila">
+      <h2 class="section__title" id="judul-vila">Pilihan Vila</h2>
+      <label class="field__label" for="cari-vila">Cari vila</label>
+      <input class="field__input field__input--search" type="search" id="cari-vila"
+             placeholder="Ketik nama, tipe, atau fasilitas (misal: kolam)">
+      <p class="notice" id="pesan-vila" role="status"></p>
+      <div class="villa-list" id="daftar-vila"></div>
+    </section>
+
+    <section class="section" id="pesan" aria-labelledby="judul-pesan">
+      <h2 class="section__title" id="judul-pesan">Formulir Pemesanan</h2>
+      <form class="booking-form" id="form-pesan" novalidate>
+        <div class="booking-form__row">
+          <div class="field">
+            <label class="field__label" for="nama">Nama tamu</label>
+            <input class="field__input" type="text" id="nama" name="nama" autocomplete="name" placeholder="Nama lengkap">
+          </div>
+          <div class="field">
+            <label class="field__label" for="unit">Pilih vila</label>
+            <select class="field__input" id="unit" name="unit"></select>
+          </div>
+        </div>
+        <div class="booking-form__row">
+          <div class="field">
+            <label class="field__label" for="masuk">Tanggal check-in</label>
+            <input class="field__input" type="date" id="masuk" name="masuk">
+          </div>
+          <div class="field">
+            <label class="field__label" for="keluar">Tanggal check-out</label>
+            <input class="field__input" type="date" id="keluar" name="keluar">
+          </div>
+        </div>
+        <div class="booking-form__row">
+          <div class="field">
+            <label class="field__label" for="tamu">Jumlah tamu (1–10)</label>
+            <input class="field__input" type="number" id="tamu" name="tamu" min="1" max="10" value="2">
+          </div>
+        </div>
+        <div class="booking-form__actions">
+          <button class="btn btn--outline" type="button" id="tombol-cek">Cek Ketersediaan</button>
+          <button class="btn btn--primary" type="submit">Pesan Sekarang</button>
+        </div>
+      </form>
+
+      <article class="result" id="hasil" aria-live="polite">
+        <h3 class="result__title">Ringkasan Biaya</h3>
+        <div class="result__body" id="hasil-isi">
+          <p class="result__hint">Isi tanggal dan pilih vila. Total biaya akan muncul di sini.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="pesanan" aria-labelledby="judul-pesanan">
+      <h2 class="section__title" id="judul-pesanan">Pesanan Saya</h2>
+      <p class="notice" id="pesan-pesanan">Belum ada pesanan.</p>
+      <ul class="order-list" id="daftar-pesanan"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <h2 class="site-footer__title">Hubungi Pemilik</h2>
+      <p>Pak Hendra – WhatsApp: 0812-0000-0000</p>
+      <p>Jl. Raya Puncak, Kabupaten Bogor, Jawa Barat</p>
+      <p class="site-footer__small">© 2026 Villa Permai</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
